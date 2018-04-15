@@ -35,6 +35,11 @@ body {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
+.active-category {
+  background-color: gray;
+  box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
 /* SEC 3 ==========    Items CSS    ========== */
 
 .items-container {
