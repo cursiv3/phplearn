@@ -1,9 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+
 html,
 body {
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+  font-family: "Shadows Into Light", cursive;
+}
+
+button{
+  font-family: "Shadows Into Light", cursive;
+  margin: 15px;
+  font-size: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 20px;
+}
+
+input:focus {
+  outline-width: 0;
+  border-bottom: 2px solid blue;
 }
 
 /* SEC 1 ==========    Parent Container    ========== */
@@ -15,6 +45,7 @@ body {
   top: 50%;
   left: 35%;
   transform: translate(-35%, -50%);
+  z-index: 1;
 }
 
 /* SEC 2 ==========    Category CSS    ========== */
@@ -40,6 +71,20 @@ body {
   box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
+.add-item-btn {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(75, 75, 230);
+  color: white;
+  border: none;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.add-item-btn:hover {
+  cursor: pointer;
+  background-color: rgb(141, 141, 202);
+}
+
 /* SEC 3 ==========    Items CSS    ========== */
 
 .items-container {
@@ -55,4 +100,50 @@ body {
   position: relative;
 }
 
-/* SEC 4 ==========    Whatever    ========== */
+/* SEC 4 ==========    Add Item Modal    ========== */
+
+.modal-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.modal-opaque-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9;
+}
+
+.modal-dialog-box {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 10;
+  text-align: center;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.6);
+}
+
+.modal-close-btn {
+  color: red;
+  position: absolute;
+  right: 0;
+  padding: 0 10px;
+}
+
+.modal-close-btn:hover {
+  cursor: pointer;
+}
+
+.show-modal {
+  display: initial;
+}
+
+.hide-modal {
+  display: none;
+}

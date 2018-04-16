@@ -1,6 +1,4 @@
 <?php
-function post_data($table, $field, $val)
-{
     include './config.php';
 
     $connection = mysqli_connect($host, $username, $password, $database);
@@ -9,7 +7,10 @@ function post_data($table, $field, $val)
         die("Connection failed: " . $connection->connect_error);
     }
 
-    $post = mysqli_query($connection, "INSERT INTO $table ($field) VALUES ($val)");
+    $category = $_POST['category'];
+    $body = $_POST['item'];
+    
+
+    mysqli_query($connection, "INSERT INTO items (id, category, body) VALUES (1, $category, $body)");
 
     mysqli_close($connection);
-}
