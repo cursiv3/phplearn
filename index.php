@@ -9,13 +9,14 @@ $items = get_data('items', 'body');
 ?>
 
 <html>
-
     <head>
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
 
     <body>
-     <?php include "./components/add_item_modal.php"; ?>
+
+
+        <?php include "./components/add_item_modal.php"; ?>
         <div class="app-parent-container">
             <div id="categ-button-parent" class='category-container'>
                 <button class='add-item-btn' onclick="show_modal()">Add Item</button>
@@ -26,6 +27,7 @@ $items = get_data('items', 'body');
                 </ul>
             </div>
         </div>
+
 
         <script src="./js/show_modal.js"></script>
         <script src="./js/list_view.js"></script>
@@ -50,6 +52,5 @@ $items = get_data('items', 'body');
                 }
             });
         </script>
-
     </body>
 </html>

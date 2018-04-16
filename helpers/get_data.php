@@ -9,7 +9,13 @@ function get_data($type, $field)
         die("Connection failed: " . $connection->connect_error);
     }
 
-    $result = mysqli_query($connection, "SELECT * FROM " . $type . ";");
+    $query;
+    if ($field == "category") {
+        $query = "SELECT DISTINCT category FROM {$type};";
+    } else {
+        $query = "SELECT * FROM {$type};";
+    }
+    $result = mysqli_query($connection, $query);
     $fields = array();
     while ($row = $result->fetch_assoc()) {
         $fields[] = $row[$field];

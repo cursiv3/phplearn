@@ -1,5 +1,5 @@
 <?php
-    include './config.php';
+    include '../config.php';
 
     $connection = mysqli_connect($host, $username, $password, $database);
 
@@ -11,6 +11,14 @@
     $body = $_POST['item'];
     
 
-    mysqli_query($connection, "INSERT INTO items (id, category, body) VALUES (1, $category, $body)");
+    if(mysqli_query($connection, "INSERT INTO items (id, category, body) VALUES (1, '$category', '$body')")) {
+        echo "posted correctly";
+    }  else {
+        echo "error";
+        echo $category;
+        echo $body;
+    }
 
     mysqli_close($connection);
+    header('Location: http://phptest/');
+    exit();
